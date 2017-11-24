@@ -1,0 +1,18 @@
+\section{Wstęp}
+Celem projektu było stworzenie generatora sygnału wzorcowego na podstawie zadanej charakterystyki częstotliwościowej. Do realizacji zadania postanowiono skorzystać ze sprzętu laboratoryjnego, na który składały się:
+\begin{enumerate}
+\item Komputer klasy PC,
+\item Zestaw startowy z mikrokontrolerem z rodziny STM32 (STM32F401),
+\item Oscyloskop.
+\end{enumerate}
+Korzystano z oprogramowania znajdującego się na PC, na którym zainstalowany jest system operacyjny Windows, a w szczególności z:
+\begin{enumerate}
+\item STM32CubeMX - graficznego środowiska umożliwiającego szybką konfigurację układów peryferialnych wraz generację szablonu kodu w języku C,
+\item SW4STM32 - środowiska umożliwiającego szybkie tworzenie oraz debugowanie napisanego kodu,
+\item MATLAB - zintegrowanego środowiska programistycznego, w którym stworzono prototyp algorytmu oraz interfejs u użytkownika.
+\end{enumerate}
+Zdecydowano, że docelowo użytkownik zadawał będzie punkty charakterystyki z poziomu aplikacji napisanej w MATLABie. Informacje te przesłane zostaną do mikrokontrolera poprzez interfejs szeregowy zgodnie ze standardem RS-232. Mikrokontroler wygeneruje odpowiedni sygnał wzorcowy, a następnie wyśle go do przetwornika cyfrowo-analogowego. Sygnał wyjściowy możliwy będzie do obejrzenia na oscyloskopie.
+
+
+
+
