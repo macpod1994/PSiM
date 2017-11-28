@@ -1,5 +1,19 @@
 \section{Algorytm}
 \subsection{Dyskretna transformacja Fouriera}
+Głównym narzędziem matematycznym, które wykorzystano do rozwiązania postawionego zadania była odwrotna transformacja Fouriera. Przesłana przez użytkownika charakterystyka częstotliwościowa reprezentowana będzie poprzez wektor próbek. Dodatkowo biorąc pod uwagę fizyczne ograniczenia, w tym niezerowy czas działania przetwornika postanowiono wykorzystać algorytm odwrotnej dyskretnej transformacji Fouriera (IDFT). 
+
+Oznaczając prze $N$ liczbę punktów charakterystyki częstotliwościowej zadanych przez użytkownika wprowadzono następujące oznaczenia:
+\begin{align*} 
+&freq = [f_1, f_2, ..., f_N]^T \\ 
+&amp = [A_1, A_2, ..., A_N]^T \\
+&phase = [\phi_1, \phi_2, ..., \phi_N]^T
+\end{align*}
+gdzie $freq$ jest wektorem niezerowych częstotliwości składowych zadanego sygnału, natomiast $amp$ oraz $phase$ odpowiadających im amplitud i przesunięć fazowych. Taki zabieg pozwala na zwarty zapis formuły:
+\begin{equation}
+x(k\Delta t) = \sum_{n=1}^{N}A_n\cdot\cos(2 \pi f_nk \Delta t - \phi_n), \quad k=0,1,2,...
+\end{equation}
+umożliwiającej wyliczenie kolejnych wartości sygnału spróbkowanego z częstotliwością $f_p=\frac{1}{\Delta t}$, którego charakterystyka częstotliwościowa została zadana.
 
 \subsection{Prototyp algorytmu}
+
 
