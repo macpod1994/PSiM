@@ -1,0 +1,8 @@
+content_assist_disabled_computers=org.eclipse.cdt.ui.textProposalCategory\u0000org.eclipse.cdt.ui.parserProposalCategory\u0000
+eclipse.preferences.version=1
+org.eclipse.cdt.internal.ui.text.doctools.multi=179,181,175
+org.eclipse.cdt.internal.ui.text.doctools.recognizedTag=167,167,209
+org.eclipse.cdt.internal.ui.text.doctools.single=179,181,175
+spelling_locale_initialized=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

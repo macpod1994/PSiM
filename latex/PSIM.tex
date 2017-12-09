@@ -23,6 +23,9 @@
 \usepackage{multirow}
 \usepackage {float}
 \usepackage{enumerate}%[I], numerki, [(a)]
+
+\usepackage{listings}             % Include the listings-package
+	
 %ustawienie poziomów wypunktowania do wyboru: $\bullet$, $\cdot$, $\diamond$, $-$, $\ast$ and $\circ$ 
 \renewcommand{\labelitemi}{$\diamond$}
 \renewcommand{\labelitemii}{$\bullet$}
@@ -53,7 +56,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[R]{\slshape{\small \rightmark}}
-\fancyfoot[R]{Wahadło odwrócone}
+\fancyfoot[R]{PSiM}
 \fancyhead[L]{M. Cebula, P. Merynda, M. Podsiadło}     
 \fancyfoot[L]{Strona \thepage \hspace{1pt} z\hspace{1pt} \pageref*{LastPage}}    
 \renewcommand{\headrulewidth}{1pt}
@@ -62,12 +65,15 @@
 
 \begin{document}
 
+\lstset{language=C} 
+	
 \input{titlepage}
 
 \include{Wstep}
-\include{konfiguracja}
 \include{algorytm}
 \include{implementacja}
+\include{konfiguracja}
+\include{komunikacja}
 \include{wnioski}
 
 \newpage

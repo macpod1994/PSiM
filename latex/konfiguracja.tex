@@ -4,3 +4,25 @@
 \subsection{Konfiguracja przetwornika DAC}
 
 \subsection{Konfiguracja portu szeregowego}
+
+Do przesyłania danych z komputera do mikrokontrolera wykorzystany został protokół szeregowy \textit{RS232}. Parametry charakteryzujące transmisję podane są w tabeli \ref{tab_rs232}.
+
+\begin{table}[h]
+	\caption{Parametry portu szeregowego.}
+	\label{tab_rs232}
+	\centering
+	
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Parametr} & \textbf{Wartość}\\
+		\hline
+		Prędkość transmisji & 115200 Bitów/s \\
+		\hline
+		Długość słowa & 8 bitów \\
+		\hline
+		Bit parzystości & - \\
+		\hline
+		Bit stopu & 1 \\
+		\hline
+	\end{tabular}
+\end{table}   

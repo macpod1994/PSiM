@@ -1,0 +1,110 @@
+\section{Komunikacja}
+
+\subsection{Protokół}
+
+Dane z komputera do mikrokontrolera przesyłane są za pomocą protokołu \textit{RS232}, którego parametry podano w tabeli \ref{tab_rs232}. Specyfika implementowanego algorytmu wymagała zaproponowania jednolitego sposobu przesyłania danych opisujących zadaną charakterystykę. \\
+Należało uwzględnić następujące czynniki:
+\begin{enumerate}
+		
+	\item możliwość przesyłania dowolnie wielu zestawów danych opisujących pojedynczy punk charakterystyki, tzn. częstotliwość, amplitudę i przesunięcie fazowe,
+	\item możliwość przesyłania nowego zestawu danych bez konieczności resetowania układu.
+	\item liczy opisujące poszczególne współczynniki mogą mieć różną liczbę cyfr.
+\end{enumerate}
+%
+%
+Biorąc pod uwagę wszystkie powyższe wymagania oraz specyfikę protokołu \textit{RS232} zdecydowano się przesyłać dane w postaci pojedynczych znaków. Procedura \textit{składania} liczby z przesłanych znaków została zaimplementowana w samym urządzeniu. Aby algorytm mógł rozróżnić czy przesłany znak jest częścią obecnie składanej liczby czy dotyczy już następnego parametru, wprowadzono znak \textit{tabulacji}, który oddziela cyfry kolejnych liczb.
+\\
+Przyjęto, że pierwsza liczba przesłana do mikrokontrolera określa liczbę punktów charakterystyki. Następnie przesyłane są kolejne zestawy danych składające się z trzech liczb: częstotliwości, amplitudy i przesunięcia fazowego. Każda z tych trzech liczb zapisywana jest w odpowiedniej tablicy.
+\\
+Do przechowywania poszczególnych wartości wykorzystywane są dwa zestawy dynamicznie alokowanych tablic. Pierwszy zestaw służy do przechowywania danych obecnie generowanego sygnału, natomiast drugi wykorzystywany jest do zapisywania aktualnie przesyłanego zestawu. 
+\\
+Po przesłaniu wszystkich liczb pamięć przeznaczona na pierwszy zestaw tablic jest zwalniana. Do wska\'zników, które wcześniej przechowywały adresy pierwszego zestawu przepisywane są adresy zestawu drugiego. Dzięki operacjom na wska\'znikach zaoszczędzono czas potrzebny na przepisywanie danych z jednego zestawu do drugiego. 
+\\
+Kod od przerwania odebrania nowego znaku zamieszczony jest na listingu \ref{uart_rec}
+\begin{lstlisting}[frame=single, caption = dasdas, label = uart_rec]
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+
+	static int i=0;
+	static int sample_iter = -1;
+	static int liczbaProbek = -1;
+	static int idTab = 0;
+	uint8_t data[50];
+	uint16_t size = 0;
+	
+	// procedura "skladania" liczby z przeslanych cyfr
+	
+	if(Received == 9 || i==ReceivedTabSize) // zatwierdzenie liczby TABem
+	{
+		volatile uint8_t recNumber = 0;
+		for (int k=0;k<i;k++)
+		{
+			recNumber += power(i-k-1) * ReceivedTab[k];
+		}
+		i = 0;
+		
+		//odebranie pierwzej liczby okreslajacej liczbe przesylanych 
+		//punktow
+		if(sample_iter == -1)
+		{
+			liczbaProbek = recNumber;
+			MAX = liczbaProbek;
+			freqTabRT = malloc(liczbaProbek*sizeof(uint8_t));
+			ampTabRT = malloc(liczbaProbek*sizeof(uint8_t));
+			phaseTabRT = malloc(liczbaProbek*sizeof(uint8_t));
+			sample_iter = 0;
+		}
+		else
+		{
+			size = sprintf(data, "echoProbki:\t %u \n\r", recNumber);
+			HAL_UART_Transmit_IT(&huart2, data, size);
+			if(sample_iter%3 == 0) // freq
+			{
+				freqTabRT[idTab] =  recNumber;
+				freq = recNumber;
+			}
+			else if(sample_iter%3 == 1) // amp
+			{
+				ampTabRT[idTab] = recNumber;
+			}
+			else if(sample_iter%3 == 2) // phase
+			{
+				phaseTabRT[idTab] = recNumber;
+				idTab++;
+			}
+			sample_iter += 1;
+		}
+		if(idTab == liczbaProbek)
+		{
+			free(freqTab);
+			free(ampTab);
+			free(phaseTab);
+			freqTab = freqTabRT;
+			ampTab = ampTabRT;
+			phaseTab = phaseTabRT;
+			
+			size = sprintf(data, "koniec \n\r");
+			HAL_UART_Transmit_IT(&huart2, data, size);
+			sample_iter = -1;
+			idTab = 0;
+		}
+	
+	}
+	else
+	{
+		ReceivedTab[i] = atoi(&Received);
+		i++;
+	}
+	
+	// ponowne wlaczenie odbierania
+	HAL_UART_Receive_IT(&huart2, &Received, r_size);
+}
+
+int power(int a)
+{
+	int wynik = 1;
+	for (int i=0;i<a;i++)
+		wynik *= 10;
+	return wynik;
+}
+\end{lstlisting}
+

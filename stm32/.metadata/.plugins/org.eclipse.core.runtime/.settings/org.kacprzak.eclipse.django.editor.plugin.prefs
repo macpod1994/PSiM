@@ -1,0 +1,14 @@
+_django.editor.custom.templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+_pref_csscomment_color=192,192,192
+_pref_djcomment_color=153,153,102
+_pref_djkeyword_color=176,0,88
+_pref_djkeyword_style=1
+_pref_djstring_color=0,255,128
+_pref_djtag_delimiter_color=123,89,68
+_pref_djvariable_color=0,163,240
+_pref_foreground_color=192,192,192
+_pref_htmlscript_color=125,148,213
+_pref_htmlstring_color=0,255,128
+_pref_htmltag_color=192,192,192
+_pref_jskeyword_color=0,255,128
+eclipse.preferences.version=1

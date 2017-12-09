@@ -1,0 +1,15 @@
+\BOOKMARK [1][-]{section.1}{Wstep}{}% 1
+\BOOKMARK [1][-]{section.2}{Algorytm}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Dyskretna transformacja Fouriera}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Prototyp algorytmu}{section.2}% 4
+\BOOKMARK [1][-]{section.3}{Implementacja}{}% 5
+\BOOKMARK [2][-]{subsection.3.1}{Interfejs uzytkownika}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.2}{Protok\363\233 komunikacyjny}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.3}{Generacja sygna\233u wyjsciowego}{section.3}% 8
+\BOOKMARK [1][-]{section.4}{Konfiguracja}{}% 9
+\BOOKMARK [2][-]{subsection.4.1}{Konfiguracja timer\363w}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.2}{Konfiguracja przetwornika DAC}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.3}{Konfiguracja portu szeregowego}{section.4}% 12
+\BOOKMARK [1][-]{section.5}{Komunikacja}{}% 13
+\BOOKMARK [2][-]{subsection.5.1}{Protok\363\233}{section.5}% 14
+\BOOKMARK [1][-]{section.6}{Wnioski}{}% 15

@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+org.eclipse.jface.textfont=1|Consolas|10.0|0|WINDOWS|1|0|0|0|0|0|0|0|0|1|0|0|0|0|Consolas;
+semanticHighlighting.method.bold=false
+semanticHighlighting.method.color=0,0,0
+semanticHighlighting.method.enabled=false
+semanticHighlighting.methodDeclarationName.bold=true
+semanticHighlighting.methodDeclarationName.color=0,0,0
+semanticHighlighting.methodDeclarationName.enabled=false

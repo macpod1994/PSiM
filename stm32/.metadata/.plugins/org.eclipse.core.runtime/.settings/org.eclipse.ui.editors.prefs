@@ -1,0 +1,17 @@
+PHPReadOccurrenceIndicationColor=97,97,97
+PHPWriteOccurrenceIndicationColor=148,133,103
+comment_stylePreferences=NONE
+comment_text=false
+eclipse.preferences.version=1
+hyperlinkColor=0,0,255
+infoIndicationColor=0,128,255
+javaScriptOccurrenceIndicationColor=97,97,97
+linked.focus.color=70,100,165
+linked.target.color=70,100,165
+matchingTagIndicationColor=212,212,212
+occurrenceIndicationColor=212,212,212
+org.eclipse.cdt.ui.occurrenceIndicationColor=209,209,209
+overrideIndicatorColor=180,207,205
+overviewRuler_migration=migrated_3.1
+pydevOccurrenceIndicationColor=168,211,255
+writeOccurrenceIndicationColor=240,216,168
