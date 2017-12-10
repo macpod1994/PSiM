@@ -1,5 +1,7 @@
 %% Init
 close all;
+clear all;
+
 fig = figure('Name','Procesory Sygna³owe');
 Tab = zeros(1,3);
 freq = 0;
@@ -17,7 +19,7 @@ manuLog = uimenu(menu1,'Label','Log Scale','CallBack',...
     ['axPh.XScale = ''log'';' 'axis(axPh,[1e-2 freqMax 0 ampMax]);'...
      'axis(axAm,[1e-2 freqMax 0 ampMax]);' 'axAm.XScale = ''log'';']);
 manuRes = uimenu(menu1,'Label','Reset','CallBack','Tab = zeros(1,3);');
-wyjscie = uimenu(menu1,'Label','Exit');
+wyjscie = uimenu(menu1,'Label','closeConnection(rs)');
 set(wyjscie,'CallBack','close');
 %% Manual Input
 freqTxt = uicontrol(gcf,'Style','text','Units','normalized',...
@@ -54,7 +56,7 @@ grid on;
 ylabel('Phase [°]');
 xlabel('Frequency [Hz]');
 %% RS 232 interface
-rs = serial('COM4','BaudRate',9800,'Parity','even');
+rs = serial('COM3','BaudRate',115200);
 sendButton = uicontrol(gcf, 'Style','push','String','Send to device','Units','normalized',...
     'position',[0.75 0.75 0.2 0.1],'CallBack',['sendTab2rs(rs,Tab);']);
 %% Time domain signal

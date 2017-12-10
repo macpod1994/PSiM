@@ -5,14 +5,21 @@ if Tab(1,:) == [0 0 0]
 end
 Tab = round(Tab);
 liczbaProbek = numel(Tab)/3;
+liczbaProbek
 if liczbaProbek<1
     return;
 end
 fopen(rs);
-fprintf(rs,'%s',num2str(liczbaProbek),'async');
+fprintf(rs,'%s\t',num2str(liczbaProbek),'async');
+pause(0.2)
+fprintf(rs,'\t');
+pause(0.2)
 for i=1:liczbaProbek
     for j=1:3
-        fprintf(rs,'%s',num2str(Tab(i,j)),'async');
+        fprintf(rs,'%s\t',num2str(Tab(i,j)),'async');
+        pause(0.2)
+        fprintf(rs,'\t');
+        pause(0.2)
     end
 end
 fclose(rs);
