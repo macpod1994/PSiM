@@ -14,11 +14,11 @@ if length(lowFreq)<1
 end
 longstPeriod = 1/lowFreq;
 step = 1/(50*freqMax);
-t = 0:step:2*longstPeriod';
+t = 0:step:10*longstPeriod';
 y = zeros(size(t));
 for i=1:length(y)
     for j=1:liczbaProbek
-        y(i) = y(i) + amps(j)*cos(2*pi*freqs(j)*t(i)+phs(j)*pi/180);
+        y(i) = y(i) + amps(j)*cos(2*pi*freqs(j)*t(i)-phs(j)*pi/180);
     end
 end
 figure(2);
