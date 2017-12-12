@@ -60,7 +60,7 @@ grid on;
 ylabel('Phase [°]');
 xlabel('Frequency [Hz]');
 %% RS 232 interface
-rs = serial('COM4','BaudRate',9800,'Parity','even');
+rs = serial('COM3','BaudRate',115200);
 sendButton = uicontrol(gcf, 'Style','push','String','Send to device',...
     'Units','normalized',...
     'position',[0.75 0.88 0.2 0.05],'CallBack',['sendTab2rs(rs,Tab);']);
