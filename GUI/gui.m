@@ -6,12 +6,12 @@ Tab = zeros(1,3);
 freq = 0;
 amp = 0;
 phase = 0;
-freqMax = 1e2;
+freqMax = 1e4;
 ampMax = 20;
 %% Layout
 %% Menu
 set(fig, 'MenuBar','None');
-set(fig, 'Position', get(0, 'Screensize'));
+% set(fig, 'Position', get(0, 'Screensize'));
 menu1 = uimenu('Label','GUI');
 autoScale = uimenu(menu1,'Label','Auto Scale','CallBack',...
     ['axis(axPh,[0 max(Tab(:,1)) 0 360]);'...

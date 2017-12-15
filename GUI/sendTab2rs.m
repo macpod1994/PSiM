@@ -20,6 +20,7 @@ for i=1:liczbaProbek
         pause(0.2)
         fprintf(rs,'\t');
         pause(0.2)
+        Tab(i,j)
     end
 end
 fclose(rs);

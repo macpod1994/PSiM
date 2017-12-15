@@ -42,7 +42,7 @@
 /* USER CODE BEGIN Includes */
 #include "stdlib.h"
 
-#define ReceivedTabSize 6
+#define ReceivedTabSize 20
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -59,28 +59,28 @@ volatile int MAX = 0;
 const float tp = 0.00001;
 //const float pi2tp = 6.285*tp;
 //volatile int freqTab[] = {500,3};
-volatile uint8_t *freqTab = NULL;
-volatile uint8_t *ampTab = NULL;
-volatile uint8_t *phaseTab = NULL;
-volatile uint8_t *freqTabRT = NULL;
-volatile uint8_t *ampTabRT = NULL;
-volatile uint8_t *phaseTabRT = NULL;
+volatile int *freqTab = NULL;
+volatile int *ampTab = NULL;
+volatile int *phaseTab = NULL;
+volatile int *freqTabRT = NULL;
+volatile int *ampTabRT = NULL;
+volatile int *phaseTabRT = NULL;
 volatile float out = 0;
 volatile int licznik;
 
-uint16_t r_size = 1;
+int r_size = 1;
 volatile int output = 0;
 volatile float cos;
 volatile float wsp_a;
 volatile float wsp_b;
 
 volatile float vv;
-volatile uint8_t bb;
-volatile uint8_t aa;
+volatile int bb;
+volatile int aa;
 
-volatile uint8_t freq = 0;
-volatile uint8_t Received;
-volatile uint8_t ReceivedTab[ReceivedTabSize];
+volatile int freq = 0;
+volatile int Received;
+volatile int ReceivedTab[ReceivedTabSize];
 
 const float cosTable[360] = {
   -0.999847695156391270f, -0.999390827019095760f, -0.998629534754573830f,
@@ -277,7 +277,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 	 if(htim->Instance == TIM11){
 
-		 //	 HAL_DAC_SetValue(&hdac,DAC_CHANNEL_1,DAC_ALIGN_12B_R,output);
+		 HAL_DAC_SetValue(&hdac,DAC_CHANNEL_1,DAC_ALIGN_12B_R,output);
 		 if(freqTab==NULL || ampTab==NULL ||phaseTab==NULL)
 		 {
 			 return;
@@ -318,7 +318,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 
 	if(Received == 9 || i==ReceivedTabSize) // zatwierdzenie liczby TABem
 	{
-		volatile uint8_t recNumber = 0;
+		volatile int recNumber = 0;
 		for (int k=0;k<i;k++)
 		{
 			recNumber += power(i-k-1) * ReceivedTab[k];
@@ -330,9 +330,9 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 		{
 			liczbaProbek = recNumber;
 			MAX = liczbaProbek;
-			freqTabRT = malloc(liczbaProbek*sizeof(uint8_t));
-			ampTabRT = malloc(liczbaProbek*sizeof(uint8_t));
-			phaseTabRT = malloc(liczbaProbek*sizeof(uint8_t));
+			freqTabRT = malloc(liczbaProbek*sizeof(int));
+			ampTabRT = malloc(liczbaProbek*sizeof(int));
+			phaseTabRT = malloc(liczbaProbek*sizeof(int));
 			sample_iter = 0;
 		}
 		else
@@ -416,7 +416,7 @@ int main(void)
 
   HAL_TIM_Base_Start_IT(&htim11);
   HAL_TIM_Base_Start_IT(&htim6);
-  HAL_DAC_Start_(&hdac,DAC_CHANNEL_1);
+  HAL_DAC_Start(&hdac,DAC_CHANNEL_1);
   HAL_UART_Receive_IT(&huart2, &Received, r_size);
   /* USER CODE END 2 */
 
@@ -427,7 +427,7 @@ int main(void)
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
-
+ }
   /* USER CODE END 3 */
 
 }
@@ -503,7 +503,7 @@ static void MX_DAC_Init(void)
 
     /**DAC channel OUT1 config 
     */
-  sConfig.DAC_Trigger = DAC_TRIGGER_T6_TRGO;
+  sConfig.DAC_Trigger = DAC_TRIGGER_NONE;
   sConfig.DAC_OutputBuffer = DAC_OUTPUTBUFFER_ENABLE;
   if (HAL_DAC_ConfigChannel(&hdac, &sConfig, DAC_CHANNEL_1) != HAL_OK)
   {

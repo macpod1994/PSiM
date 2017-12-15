@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.8.22)  9 DEC 2017 12:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.8.22)  15 DEC 2017 18:50
 entering extended mode
 **./PSIM.tex
 (PSIM.tex
@@ -1013,7 +1013,7 @@ Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'polish'.
 
 (PSIM.aux (Wstep.aux) (algorytm.aux) (implementacja.aux) (konfiguracja.aux)
-(komunikacja.aux) (wnioski.aux))
+(wnioski.aux))
 \openout1 = `PSIM.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
@@ -1030,8 +1030,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 66.
 LaTeX Font Info:    ... okay on input line 66.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 66.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 66.
-
-("d:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+ ("d:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 66.
@@ -1147,7 +1146,7 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 ("d:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
-(titlepage.tex <agh.jpg, id=63, 146.4672pt x 284.7438pt>
+(titlepage.tex <agh.jpg, id=55, 146.4672pt x 284.7438pt>
 File: agh.jpg Graphic file (type jpg)
  <use agh.jpg>
 Package pdftex.def Info: agh.jpg used on input line 12.
@@ -1175,36 +1174,36 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 \openout2 = `algorytm.aux'.
 
  (algorytm.tex
-LaTeX Font Info:    Try loading font information for OT1+anttlm on input line 5
+LaTeX Font Info:    Try loading font information for OT1+anttlm on input line 6
 .
 
 ("d:\Program Files (x86)\MiKTeX 2.9\tex\latex\antt\ot1anttlm.fd"
 File: ot1anttlm.fd 2005/10/05 v1.2 font definition file for OT1/anttlm (MW)
 )
-LaTeX Font Info:    Try loading font information for OML+anttl on input line 5.
+LaTeX Font Info:    Try loading font information for OML+anttl on input line 6.
 
 
 ("d:\Program Files (x86)\MiKTeX 2.9\tex\latex\antt\omlanttl.fd"
 File: omlanttl.fd 2005/10/05 v1.2 font definition file for OML/anttl (MW)
 )
-LaTeX Font Info:    Try loading font information for OMS+anttl on input line 5.
+LaTeX Font Info:    Try loading font information for OMS+anttl on input line 6.
 
 
 ("d:\Program Files (x86)\MiKTeX 2.9\tex\latex\antt\omsanttl.fd"
 File: omsanttl.fd 2005/10/05 v1.2 font definition file for OMS/anttl (MW)
 )
-LaTeX Font Info:    Try loading font information for OMX+anttl on input line 5.
+LaTeX Font Info:    Try loading font information for OMX+anttl on input line 6.
 
 
 ("d:\Program Files (x86)\MiKTeX 2.9\tex\latex\antt\omxanttl.fd"
 File: omxanttl.fd 2005/10/05 v1.2 font definition file for OMX/anttl (MW)
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 5.
+LaTeX Font Info:    Try loading font information for U+msa on input line 6.
 
 ("d:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 5.
+LaTeX Font Info:    Try loading font information for U+msb on input line 6.
 
 ("d:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1215,59 +1214,100 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout2 = `implementacja.aux'.
 
 
-(implementacja.tex) [4
-
-
-]
-\openout2 = `konfiguracja.aux'.
-
- (konfiguracja.tex) [5
-
-
-pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
- been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.75 \include{konfiguracja}
-                           ]
-\openout2 = `komunikacja.aux'.
-
- (komunikacja.tex
-Overfull \hbox (8.98532pt too wide) in paragraph at lines 10--11
+(implementacja.tex
+Overfull \hbox (8.98532pt too wide) in paragraph at lines 11--12
 []\T1/anttl/m/sl/10.95 mo»liwo±¢ prze-sy-ªa-nia no-wego ze-stawu da-nych bez ko
 -niecz-no-±ci re-se-to-wa-nia ukªadu. 
  []
 
-LaTeX Font Info:    Try loading font information for TS1+pcr on input line 25.
+LaTeX Font Info:    Try loading font information for TS1+pcr on input line 26.
 ("d:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ts1pcr.fd"
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
-) [6
+) [4
 
 
-] [7])
-[8]
+] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
+
+ []
+
+[6]) [7]
+\openout2 = `konfiguracja.aux'.
+
+ (konfiguracja.tex
+<fig/stmPorty.png, id=242, 633.86812pt x 517.18219pt>
+File: fig/stmPorty.png Graphic file (type png)
+ <use fig/stmPorty.png>
+Package pdftex.def Info: fig/stmPorty.png used on input line 6.
+(pdftex.def)             Requested size: 253.54276pt x 206.8692pt.
+
+<fig/timer11.png, id=246, 480.29437pt x 231.11343pt>
+File: fig/timer11.png Graphic file (type png)
+ <use fig/timer11.png>
+Package pdftex.def Info: fig/timer11.png used on input line 18.
+(pdftex.def)             Requested size: 384.23601pt x 184.89099pt.
+
+<fig/clock.png, id=247, 849.1725pt x 327.47343pt>
+File: fig/clock.png Graphic file (type png)
+ <use fig/clock.png>
+Package pdftex.def Info: fig/clock.png used on input line 26.
+(pdftex.def)             Requested size: 424.5852pt x 163.73631pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[8
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
+s been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.34 \subsection
+                {Konfiguracja portu szeregowego}pdfTeX warning (ext4): destinat
+ion with the same identifier (name{figure.2}) has been already used, duplicate 
+ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.34 \subsection
+                {Konfiguracja portu szeregowego} <./fig/stmPorty.png> <./fig/ti
+mer11.png>]) [9pdfTeX warning (ext4): destination with the same identifier (nam
+e{figure.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.75 \include{konfiguracja}
+                           pdfTeX warning (ext4): destination with the same ide
+ntifier (name{table.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.75 \include{konfiguracja}
+                            <./fig/clock.png>]
 \openout2 = `wnioski.aux'.
 
- (wnioski.tex) [9
+ (wnioski.tex) [10
 
 
 ] (PSIM.toc)
 \tf@toc=\write4
 \openout4 = `PSIM.toc'.
 
- [10
+
+[11
 
 ] 
 AED: lastpage setting LastPage
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 83.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 83.
 (PSIM.aux (Wstep.aux) (algorytm.aux) (implementacja.aux) (konfiguracja.aux)
-(komunikacja.aux) (wnioski.aux))
+(wnioski.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 83.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 83.
 Package rerunfilecheck Info: File `PSIM.out' has not changed.
-(rerunfilecheck)             Checksum: BAF13225BEB6B39F4EA760444E567CE8;955.
+(rerunfilecheck)             Checksum: 03CB4FBB74E47D59C9BFC4F7DD1C0705;842.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1275,10 +1315,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 83.
  ) 
 Here is how much of TeX's memory you used:
- 11955 strings out of 493334
- 166500 string characters out of 3136669
- 352174 words of memory out of 3000000
- 15071 multiletter control sequences out of 15000+200000
+ 12071 strings out of 493334
+ 167994 string characters out of 3136669
+ 351228 words of memory out of 3000000
+ 15143 multiletter control sequences out of 15000+200000
  96500 words of font info for 55 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,12n,49p,1058b,2036s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1292,9 +1332,9 @@ c.enc}<d:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/antt/anttl.pfb><d:/
 Program Files (x86)/MiKTeX 2.9/fonts/type1/public/antt/anttli.pfb><d:/Program F
 iles (x86)/MiKTeX 2.9/fonts/type1/public/antt/anttm.pfb><d:/Program Files (x86)
 /MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on PSIM.pdf (10 pages, 281856 bytes).
+Output written on PSIM.pdf (11 pages, 424794 bytes).
 PDF statistics:
- 284 PDF objects out of 1000 (max. 8388607)
- 123 named destinations out of 1000 (max. 500000)
- 126 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 348 PDF objects out of 1000 (max. 8388607)
+ 170 named destinations out of 1000 (max. 500000)
+ 125 words of extra memory for PDF output out of 10000 (max. 10000000)
 

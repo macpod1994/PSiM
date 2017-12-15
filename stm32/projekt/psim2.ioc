@@ -1,5 +1,5 @@
 #MicroXplorer Configuration settings - do not modify
-DAC.DAC_Trigger=DAC_TRIGGER_T6_TRGO
+DAC.DAC_Trigger=DAC_TRIGGER_NONE
 DAC.IPParameters=DAC_Trigger
 File.Version=6
 KeepUserPlacement=true
