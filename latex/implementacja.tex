@@ -1,8 +1,66 @@
 \section{Implementacja}
 \subsection{Interfejs użytkownika}
-
+\label{GUI}
+Zgodnie z założeniami projektu zbudowano aplikację w środowisku MATLAB umożliwiającą użytkownikowi szybkie przesyłanie danych do mikrokontrolera. Zadbano o intuicyjność graficznego interfejsu użytkownika udostępniając następujące funkcjonalności:
+\begin{enumerate}
+	
+	\item Ręczne wprowadzanie kolejnych punktów charakterystyki.
+	\item Automatyczne wprowadzanie częstotliwości po kliknięciu użytkownika na wykres.
+	\item Wykres amplitudy oraz przesunięcia fazowego dla wprowadzonych punktów charakterystyki częstotliwościowej.
+	\item Algorytm liczący sygnał w dziedzinie czasu na podstawie wprowadzonych przez użytkownika punktów (zgodnie z równaniem \ref{eq:alg}).
+	\item Rysowanie odpowiedzi w dziedzinie czasu \textit{online}.
+	\item Automatyczne skalowanie wykresów (skala liniowa, logarytmiczna).
+	\item Możliwość wysłania wprowadzonej charakterystyki do mikrokontrolera (zgodnie z zaimplementowanym protokołem opisanym w podrozdziale \ref{PK}).
+\end{enumerate} 
+Po wprowadzeniu dwóch próbek aplikacja prezentuje się następująco:
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale = 0.3]{fig/GUI2.png}
+	\caption		
+	{Widok aplikacji po wprowadzeniu dwóch punktów na charakterystyce częstotliwościowej.}
+	\label{gui1}
+\end{figure}
+Zakres wyświetlanych częstotliwości zgodny jest z założeniem opisanym równaniem \ref{eq:twP}. Po kliknięciu w zakładkę \textit{GUI} w menu użytkownik może wybrać jedną z opcji skalowania wykresów, a także zresetować aktualnie wprowadzone punkty lub zakończyć działanie aplikacji w sposób zapewniający zwolnienie wszystkich jej zasobów.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale = 0.3]{fig/ls.png}
+	\caption		
+	{Wyświetlenie wprowadzonej charakterystyki w skali logarytmicznej.}
+	\label{log}
+\end{figure}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale = 0.3]{fig/as.png}
+	\caption		
+	{Wyświetlenie charakterystyki w skali liniowej - automatycznie dopasowanej do wprowadzonych punktów.}
+	\label{as}
+\end{figure}
+W każdej chwili możliwe jest wygenerowanie wykresu w nowym oknie w sposób umożliwiający łatwy zapis, a także porównanie z sygnałem wyliczonym prze mikrokontroler. Po naciśnięciu przycisku \textit{Plot time domain signal} pojawi się wykres \ref{tds}.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale = 0.3]{fig/tds.png}
+	\caption		
+	{Wykres w dziedzinie czasu.}
+	\label{tds}
+\end{figure}
+Użytkownik po wciśnięciu przycisku \textit{Put} może ręcznie wprowadzić kolejny punkt charakterystyki poprzez najechanie kursorem w odpowiednie miejsce na wykresach - amplitudy oraz przesunięcia fazowego.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale = 0.3]{fig/put.png}
+	\caption		
+	{Wprowadzanie punktów do charakterystyki częstotliwościowej za pomocą kursora.}
+	\label{fig:put}
+\end{figure}
+Po wciśnięciu lewego przycisku myszy w sytuacji zobrazowanej na rysunku \ref{fig:put} główny ekran aplikacji prezentuje się następująco - rys. \ref{fig:after}.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale = 0.3]{fig/after.png}
+	\caption		
+	{Ekran aplikacji po wprowadzeniu punktu za pomocą kursora.}
+	\label{fig:after}
+\end{figure}
 \subsection{Protokół komunikacyjny}
-
+\label{PK}
 Dane z komputera do mikrokontrolera przesyłane są za pomocą protokołu \textit{RS232}, którego parametry podano w tabeli \ref{tab_rs232}. Specyfika implementowanego algorytmu wymagała zaproponowania jednolitego sposobu przesyłania danych opisujących zadaną charakterystykę. \\
 Należało uwzględnić następujące czynniki:
 \begin{enumerate}

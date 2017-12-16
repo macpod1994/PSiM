@@ -5,10 +5,10 @@
 \contentsline {subsection}{\numberline {2.2}Prototyp algorytmu}{3}{subsection.2.2}
 \contentsline {section}{\numberline {3}Implementacja}{4}{section.3}
 \contentsline {subsection}{\numberline {3.1}Interfejs u\IeC {\.z}ytkownika}{4}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Protok\IeC {\'o}\IeC {\l } komunikacyjny}{4}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Generacja sygna\IeC {\l }u wyj\IeC {\'s}ciowego}{6}{subsection.3.3}
-\contentsline {section}{\numberline {4}Konfiguracja}{8}{section.4}
-\contentsline {subsection}{\numberline {4.1}Konfiguracja timer\IeC {\'o}w}{8}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Konfiguracja przetwornika DAC}{9}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Konfiguracja portu szeregowego}{9}{subsection.4.3}
-\contentsline {section}{\numberline {5}Wnioski}{10}{section.5}
+\contentsline {subsection}{\numberline {3.2}Protok\IeC {\'o}\IeC {\l } komunikacyjny}{7}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Generacja sygna\IeC {\l }u wyj\IeC {\'s}ciowego}{9}{subsection.3.3}
+\contentsline {section}{\numberline {4}Konfiguracja}{11}{section.4}
+\contentsline {subsection}{\numberline {4.1}Konfiguracja timer\IeC {\'o}w}{11}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Konfiguracja przetwornika DAC}{12}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Konfiguracja portu szeregowego}{12}{subsection.4.3}
+\contentsline {section}{\numberline {5}Wnioski}{13}{section.5}
