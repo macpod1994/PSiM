@@ -1,19 +1,19 @@
-10:33:04 **** Incremental Build of configuration Debug for project psim2 ****
+21:18:26 **** Incremental Build of configuration Debug for project psim2 ****
 make all 
 Building file: D:/studia/V_rok/PSiM/stm32/projekt/Src/main.c
 Invoking: MCU GCC Compiler
 %cd%
 arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/studia/V_rok/PSiM/stm32/projekt/Inc" -I"D:/studia/V_rok/PSiM/stm32/projekt/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/studia/V_rok/PSiM/stm32/projekt/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/studia/V_rok/PSiM/stm32/projekt/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/studia/V_rok/PSiM/stm32/projekt/Drivers/CMSIS/Include" -I"D:/studia/V_rok/PSiM/stm32/projekt/Inc"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Application/User/main.d" -MT"Application/User/main.o" -o "Application/User/main.o" "D:/studia/V_rok/PSiM/stm32/projekt/Src/main.c"
-D:/studia/V_rok/PSiM/stm32/projekt/Src/main.c:73:16: warning: built-in function 'cos' declared as non-function
+D:/studia/V_rok/PSiM/stm32/projekt/Src/main.c:76:16: warning: built-in function 'cos' declared as non-function
  volatile float cos;
                 ^
 D:/studia/V_rok/PSiM/stm32/projekt/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
-D:/studia/V_rok/PSiM/stm32/projekt/Src/main.c:266:6: warning: unused variable 'index' [-Wunused-variable]
+D:/studia/V_rok/PSiM/stm32/projekt/Src/main.c:270:6: warning: unused variable 'index' [-Wunused-variable]
   int index = 0;
       ^
 D:/studia/V_rok/PSiM/stm32/projekt/Src/main.c: In function 'HAL_UART_RxCpltCallback':
-D:/studia/V_rok/PSiM/stm32/projekt/Src/main.c:340:19: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
-    size = sprintf(data, "echoProbki:\t %u \n\r", recNumber);
+D:/studia/V_rok/PSiM/stm32/projekt/Src/main.c:325:19: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+    size = sprintf(data, "lp:\t %u \n\r", recNumber);
                    ^
 In file included from c:\eclipse mars_c\eclipse\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.2.201703061525\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
                  from D:/studia/V_rok/PSiM/stm32/projekt/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h:50,
@@ -24,44 +24,8 @@ In file included from c:\eclipse mars_c\eclipse\plugins\fr.ac6.mcu.externaltools
 c:\eclipse mars_c\eclipse\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.2.201703061525\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
  int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
      ^
-D:/studia/V_rok/PSiM/stm32/projekt/Src/main.c:360:9: warning: passing argument 1 of 'free' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-    free(freqTab);
-         ^
-In file included from c:\eclipse mars_c\eclipse\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.2.201703061525\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
-                 from D:/studia/V_rok/PSiM/stm32/projekt/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h:50,
-                 from D:/studia/V_rok/PSiM/stm32/projekt/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:47,
-                 from D:/studia/V_rok/PSiM/stm32/projekt/Inc/stm32f4xx_hal_conf.h:244,
-                 from D:/studia/V_rok/PSiM/stm32/projekt/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:48,
-                 from D:/studia/V_rok/PSiM/stm32/projekt/Src/main.c:40:
-c:\eclipse mars_c\eclipse\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.2.201703061525\tools\compiler\arm-none-eabi\include\stdlib.h:93:7: note: expected 'void *' but argument is of type 'volatile int *'
- _VOID _EXFUN_NOTHROW(free,(_PTR));
-       ^
-D:/studia/V_rok/PSiM/stm32/projekt/Src/main.c:361:9: warning: passing argument 1 of 'free' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-    free(ampTab);
-         ^
-In file included from c:\eclipse mars_c\eclipse\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.2.201703061525\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
-                 from D:/studia/V_rok/PSiM/stm32/projekt/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h:50,
-                 from D:/studia/V_rok/PSiM/stm32/projekt/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:47,
-                 from D:/studia/V_rok/PSiM/stm32/projekt/Inc/stm32f4xx_hal_conf.h:244,
-                 from D:/studia/V_rok/PSiM/stm32/projekt/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:48,
-                 from D:/studia/V_rok/PSiM/stm32/projekt/Src/main.c:40:
-c:\eclipse mars_c\eclipse\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.2.201703061525\tools\compiler\arm-none-eabi\include\stdlib.h:93:7: note: expected 'void *' but argument is of type 'volatile int *'
- _VOID _EXFUN_NOTHROW(free,(_PTR));
-       ^
-D:/studia/V_rok/PSiM/stm32/projekt/Src/main.c:362:9: warning: passing argument 1 of 'free' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-    free(phaseTab);
-         ^
-In file included from c:\eclipse mars_c\eclipse\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.2.201703061525\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
-                 from D:/studia/V_rok/PSiM/stm32/projekt/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h:50,
-                 from D:/studia/V_rok/PSiM/stm32/projekt/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:47,
-                 from D:/studia/V_rok/PSiM/stm32/projekt/Inc/stm32f4xx_hal_conf.h:244,
-                 from D:/studia/V_rok/PSiM/stm32/projekt/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:48,
-                 from D:/studia/V_rok/PSiM/stm32/projekt/Src/main.c:40:
-c:\eclipse mars_c\eclipse\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.2.201703061525\tools\compiler\arm-none-eabi\include\stdlib.h:93:7: note: expected 'void *' but argument is of type 'volatile int *'
- _VOID _EXFUN_NOTHROW(free,(_PTR));
-       ^
-D:/studia/V_rok/PSiM/stm32/projekt/Src/main.c:367:19: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
-    size = sprintf(data, "koniec \n\r");
+D:/studia/V_rok/PSiM/stm32/projekt/Src/main.c:350:19: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+    size = sprintf(data, "sampleIter:\t %d \n\r", sample_iter);
                    ^
 In file included from c:\eclipse mars_c\eclipse\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.2.201703061525\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
                  from D:/studia/V_rok/PSiM/stm32/projekt/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h:50,
@@ -72,7 +36,19 @@ In file included from c:\eclipse mars_c\eclipse\plugins\fr.ac6.mcu.externaltools
 c:\eclipse mars_c\eclipse\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.2.201703061525\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
  int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
      ^
-D:/studia/V_rok/PSiM/stm32/projekt/Src/main.c:376:26: warning: passing argument 1 of 'atoi' from incompatible pointer type [-Wincompatible-pointer-types]
+D:/studia/V_rok/PSiM/stm32/projekt/Src/main.c:368:20: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+     size = sprintf(data, "koniec \n\r");
+                    ^
+In file included from c:\eclipse mars_c\eclipse\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.2.201703061525\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/studia/V_rok/PSiM/stm32/projekt/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h:50,
+                 from D:/studia/V_rok/PSiM/stm32/projekt/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:47,
+                 from D:/studia/V_rok/PSiM/stm32/projekt/Inc/stm32f4xx_hal_conf.h:244,
+                 from D:/studia/V_rok/PSiM/stm32/projekt/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:48,
+                 from D:/studia/V_rok/PSiM/stm32/projekt/Src/main.c:40:
+c:\eclipse mars_c\eclipse\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.2.201703061525\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/studia/V_rok/PSiM/stm32/projekt/Src/main.c:377:26: warning: passing argument 1 of 'atoi' from incompatible pointer type [-Wincompatible-pointer-types]
     ReceivedTab[i] = atoi(&Received);
                           ^
 In file included from c:\eclipse mars_c\eclipse\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.2.201703061525\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
@@ -84,7 +60,19 @@ In file included from c:\eclipse mars_c\eclipse\plugins\fr.ac6.mcu.externaltools
 c:\eclipse mars_c\eclipse\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.2.201703061525\tools\compiler\arm-none-eabi\include\stdlib.h:81:5: note: expected 'const char *' but argument is of type 'volatile int *'
  int _EXFUN(atoi,(const char *__nptr));
      ^
-D:/studia/V_rok/PSiM/stm32/projekt/Src/main.c:381:32: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+D:/studia/V_rok/PSiM/stm32/projekt/Src/main.c:378:14: warning: passing argument 1 of 'atoi' from incompatible pointer type [-Wincompatible-pointer-types]
+    vv = atoi(&Received);
+              ^
+In file included from c:\eclipse mars_c\eclipse\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.2.201703061525\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/studia/V_rok/PSiM/stm32/projekt/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h:50,
+                 from D:/studia/V_rok/PSiM/stm32/projekt/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:47,
+                 from D:/studia/V_rok/PSiM/stm32/projekt/Inc/stm32f4xx_hal_conf.h:244,
+                 from D:/studia/V_rok/PSiM/stm32/projekt/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:48,
+                 from D:/studia/V_rok/PSiM/stm32/projekt/Src/main.c:40:
+c:\eclipse mars_c\eclipse\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.2.201703061525\tools\compiler\arm-none-eabi\include\stdlib.h:81:5: note: expected 'const char *' but argument is of type 'volatile int *'
+ int _EXFUN(atoi,(const char *__nptr));
+     ^
+D:/studia/V_rok/PSiM/stm32/projekt/Src/main.c:383:32: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
    HAL_UART_Receive_IT(&huart2, &Received, r_size);
                                 ^
 In file included from D:/studia/V_rok/PSiM/stm32/projekt/Inc/stm32f4xx_hal_conf.h:368:0,
@@ -94,7 +82,7 @@ D:/studia/V_rok/PSiM/stm32/projekt/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ha
  HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
                    ^
 D:/studia/V_rok/PSiM/stm32/projekt/Src/main.c: In function 'main':
-D:/studia/V_rok/PSiM/stm32/projekt/Src/main.c:420:32: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+D:/studia/V_rok/PSiM/stm32/projekt/Src/main.c:422:32: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
    HAL_UART_Receive_IT(&huart2, &Received, r_size);
                                 ^
 In file included from D:/studia/V_rok/PSiM/stm32/projekt/Inc/stm32f4xx_hal_conf.h:368:0,
@@ -103,6 +91,12 @@ In file included from D:/studia/V_rok/PSiM/stm32/projekt/Inc/stm32f4xx_hal_conf.
 D:/studia/V_rok/PSiM/stm32/projekt/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:650:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'volatile int *'
  HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
                    ^
+D:/studia/V_rok/PSiM/stm32/projekt/Src/main.c:432:11: warning: unused variable 'size' [-Wunused-variable]
+  uint16_t size = 0;
+           ^
+D:/studia/V_rok/PSiM/stm32/projekt/Src/main.c:431:11: warning: unused variable 'data' [-Wunused-variable]
+   uint8_t data[50];
+           ^
 Finished building: D:/studia/V_rok/PSiM/stm32/projekt/Src/main.c
  
 Building target: psim2.elf
@@ -115,5 +109,5 @@ Generating binary and Printing size information:
 arm-none-eabi-objcopy -O binary "psim2.elf" "psim2.bin"
 arm-none-eabi-size "psim2.elf"
    text	   data	    bss	    dec	    hex	filename
-  16368	    488	   1968	  18824	   4988	psim2.elf
+  16512	    488	   9896	  26896	   6910	psim2.elf
  

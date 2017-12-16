@@ -12,18 +12,16 @@ end
 fopen(rs);
 fprintf(rs,'%s\t',num2str(liczbaProbek),'async');
 pause(0.2)
-fprintf(rs,'\t');
-pause(0.2)
+% fprintf(rs,'\t');
+pause(1)
 for i=1:liczbaProbek
     for j=1:3
         fprintf(rs,'%s\t',num2str(Tab(i,j)),'async');
+%         fprintf(rs,'\t');
         pause(0.2)
-        fprintf(rs,'\t');
-        pause(0.2)
-        Tab(i,j)
+        num2str(Tab(i,j))
     end
 end
 fclose(rs);
-
 end
 

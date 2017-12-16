@@ -42,7 +42,7 @@
 /* USER CODE BEGIN Includes */
 #include "stdlib.h"
 
-#define ReceivedTabSize 20
+#define ReceivedTabSize 2000
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -57,14 +57,17 @@ UART_HandleTypeDef huart2;
 /* Private variables ---------------------------------------------------------*/
 volatile int MAX = 0;
 const float tp = 0.00001;
-//const float pi2tp = 6.285*tp;
-//volatile int freqTab[] = {500,3};
+
 volatile int *freqTab = NULL;
 volatile int *ampTab = NULL;
 volatile int *phaseTab = NULL;
 volatile int *freqTabRT = NULL;
 volatile int *ampTabRT = NULL;
 volatile int *phaseTabRT = NULL;
+volatile int *freqTabTemp = NULL;
+volatile int *ampTabTemp = NULL;
+volatile int *phaseTabTemp = NULL;
+
 volatile float out = 0;
 volatile int licznik;
 
@@ -74,9 +77,11 @@ volatile float cos;
 volatile float wsp_a;
 volatile float wsp_b;
 
-volatile float vv;
+volatile int vv;
 volatile int bb;
 volatile int aa;
+
+int blad=0;
 
 volatile int freq = 0;
 volatile int Received;
@@ -237,7 +242,6 @@ inline float cosApproximation(float v)
 	value = wsp_a * (v - (int)(v) + a) + wsp_b;
 
 		aa = a;
-		vv = cos_a;
 		bb = b;
 
 	return value;
@@ -264,24 +268,15 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	static long long int t = 0;
 	int index = 0;
-
 	float v;
-//	float cos;
-
-//	static int freqTab[] = {3};
-//	static int ampTab[] = {20};
-//	static int phaseTab[] = {0};
-
-//	static int MAX = 1;
-//	uint8_t data[50];
 
 	 if(htim->Instance == TIM11){
 
 		 HAL_DAC_SetValue(&hdac,DAC_CHANNEL_1,DAC_ALIGN_12B_R,output);
-		 if(freqTab==NULL || ampTab==NULL ||phaseTab==NULL)
-		 {
-			 return;
-		 }
+//		 if(sample_iter == -1)
+//		 {
+//			 return;
+//		 }
 		 out = 0;
 		 t=t+1;
 		 for (int ii=0;ii<MAX;ii++)
@@ -308,9 +303,9 @@ int power(int a)
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 
 	static int i=0;
-	static int sample_iter = -1;
+	volatile static int sample_iter = -1;
 	static int liczbaProbek = -1;
-	static int idTab = 0;
+	volatile static int idTab = 0;
 	uint8_t data[50];
 	uint16_t size = 0;
 
@@ -319,26 +314,24 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 	if(Received == 9 || i==ReceivedTabSize) // zatwierdzenie liczby TABem
 	{
 		volatile int recNumber = 0;
-		for (int k=0;k<i;k++)
+		for (int k = 0;k < i;k++)
 		{
 			recNumber += power(i-k-1) * ReceivedTab[k];
 		}
 		i = 0;
-//		size = sprintf(data, "echo:\t %u \n\r", recNumber);
-//		HAL_UART_Transmit_IT(&huart2, data, size);
+
 		if(sample_iter == -1)
 		{
+			size = sprintf(data, "lp:\t %u \n\r", recNumber);
+			HAL_UART_Transmit_IT(&huart2, data, size);
 			liczbaProbek = recNumber;
 			MAX = liczbaProbek;
-			freqTabRT = malloc(liczbaProbek*sizeof(int));
-			ampTabRT = malloc(liczbaProbek*sizeof(int));
-			phaseTabRT = malloc(liczbaProbek*sizeof(int));
 			sample_iter = 0;
 		}
 		else
 		{
-			size = sprintf(data, "echoProbki:\t %u \n\r", recNumber);
-			HAL_UART_Transmit_IT(&huart2, data, size);
+//			size = sprintf(data, "echoProbki:\t %u \n\r", recNumber);
+//			HAL_UART_Transmit_IT(&huart2, data, size);
 			if(sample_iter%3 == 0) // freq
 			{
 				freqTabRT[idTab] =  recNumber;
@@ -354,17 +347,25 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 				idTab++;
 			}
 			sample_iter += 1;
+			size = sprintf(data, "sampleIter:\t %d \n\r", sample_iter);
+			HAL_UART_Transmit_IT(&huart2, data, size);
 		}
 		if(idTab == liczbaProbek)
 		{
-			free(freqTab);
-			free(ampTab);
-			free(phaseTab);
+			freqTabTemp = freqTab;
+			ampTabTemp = ampTab;
+			phaseTabTemp = phaseTab;
+
 			freqTab = freqTabRT;
 			ampTab = ampTabRT;
 			phaseTab = phaseTabRT;
 
-			size = sprintf(data, "koniec \n\r");
+			freqTabRT = freqTabTemp;
+			ampTabRT = ampTabTemp;
+			phaseTabRT = phaseTabTemp;
+
+
+ 			size = sprintf(data, "koniec \n\r");
 			HAL_UART_Transmit_IT(&huart2, data, size);
 			sample_iter = -1;
 			idTab = 0;
@@ -374,6 +375,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 	else
 	{
 			ReceivedTab[i] = atoi(&Received);
+			vv = atoi(&Received);
 			i++;
 	}
 
@@ -418,6 +420,22 @@ int main(void)
   HAL_TIM_Base_Start_IT(&htim6);
   HAL_DAC_Start(&hdac,DAC_CHANNEL_1);
   HAL_UART_Receive_IT(&huart2, &Received, r_size);
+
+  freqTab = (int*) calloc (100, sizeof(int));
+  ampTab = (int *) calloc (100, sizeof(int));
+  phaseTab = (int *) calloc (100, sizeof(int));
+  freqTabRT = (int *) calloc (100, sizeof(int));
+  ampTabRT = (int *) calloc (100, sizeof(int));
+  phaseTabRT = (int *) calloc (100, sizeof(int));
+
+  uint8_t data[50];
+	uint16_t size = 0;
+	if(freqTab == NULL || ampTab == NULL || phaseTab == NULL) {
+		blad = 1;
+	}
+	if(freqTabRT == NULL || ampTabRT == NULL || phaseTabRT == NULL) {
+			blad = 2;
+	}
   /* USER CODE END 2 */
 
   /* Infinite loop */

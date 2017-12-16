@@ -8,6 +8,11 @@ amp = 0;
 phase = 0;
 freqMax = 1e4;
 ampMax = 20;
+%% RS 232 interface
+rs = serial('COM3','BaudRate',115200);
+sendButton = uicontrol(gcf, 'Style','push','String','Send to device',...
+    'Units','normalized',...
+    'position',[0.75 0.88 0.2 0.05],'CallBack',['sendTab2rs(rs,Tab);']);
 %% Layout
 %% Menu
 set(fig, 'MenuBar','None');
@@ -21,7 +26,7 @@ manuLog = uimenu(menu1,'Label','Log Scale','CallBack',...
      'axis(axAm,[1e-2 freqMax 0 ampMax]);' 'axAm.XScale = ''log'';']);
 manuRes = uimenu(menu1,'Label','Reset','CallBack','Tab = zeros(1,3);');
 wyjscie = uimenu(menu1,'Label','Exit');
-set(wyjscie,'CallBack',['instrreset;' 'close;']);
+set(wyjscie,'CallBack',['instrreset;','close;']);
 %% Manual Input
 freqTxt = uicontrol(gcf,'Style','text','Units','normalized',...
     'position',[0.05 0.93 0.1 0.05],'String','Frequency');
@@ -59,11 +64,6 @@ axis([0 freqMax 0 360]);
 grid on;
 ylabel('Phase [°]');
 xlabel('Frequency [Hz]');
-%% RS 232 interface
-rs = serial('COM3','BaudRate',115200);
-sendButton = uicontrol(gcf, 'Style','push','String','Send to device',...
-    'Units','normalized',...
-    'position',[0.75 0.88 0.2 0.05],'CallBack',['sendTab2rs(rs,Tab);']);
 %% Time domain signal
 plotButton = uicontrol(gcf, 'Style','push','String',...
     'Plot time domain signal','Units','normalized',...
